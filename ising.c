@@ -2,11 +2,12 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define L 100     //lado da rede
-#define N L*L     //num de spins
+#define L 100     //side of the lattice
+#define N L*L     //num of spins
 
-int lat[N]; //vetor que forma a rede
-double J=1; //coeficiente de interacao entre os spins
+int lat[N]; //vector that forms the lattice
+double J=1; /*interation strenght of the spins, if >0 is ferromagnetic (the spins tend to stand all in the same direction
+*/
 
 //funcao que inicializa a rede c/ spins aleatorios
 int init() {
