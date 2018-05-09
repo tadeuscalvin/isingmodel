@@ -1,7 +1,7 @@
 #!/bin/bash
 
-MODE=0
-L=800
+MODE=2
+L=100
 
 while getopts ":l:m:" opt; do
     case $opt in
