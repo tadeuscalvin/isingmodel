@@ -1,11 +1,12 @@
 # isingmodel
 
 * **Prerequisites:**
-	* Install SDL2:
-		- "sudo apt-get install libsdl2-dev"
     
-	* Innstall glfw3:
+	* Install glfw3:
 		- "sudo apt-get install libglfw3-dev"
+		
+	* Install gcc:
+		- "sudo apt-get install gcc"
 		
 To run:
 
