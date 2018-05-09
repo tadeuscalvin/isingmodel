@@ -32,7 +32,7 @@ int update(double beta) {
 		if(i<L)				{ u=i+N-L; }
 		E1=-J*lat[i]*(lat[r]+lat[l]+lat[u]+lat[d]);            //energia do spin i no estado dele
 		E2= J*lat[i]*(lat[r]+lat[l]+lat[u]+lat[d]);            //energia do spin i no outro estado
-		if(E2-E1<=0) { 								//se a energia do outro estado for menor que a dele, ele muda de estado
+		if(E2-E1<=0) { 				//se a energia do outro estado for menor que a dele, ele muda de estado
 			lat[i]=-lat[i];
 		}
 		else if((double) rand()/RAND_MAX < exp(-beta*(E2-E1))) { //se a 
