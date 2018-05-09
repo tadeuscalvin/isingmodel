@@ -6,10 +6,10 @@
 #define N L*L     //num of spins
 
 int lat[N]; //vector that forms the lattice
-double J=1; /*interation strenght of the spins, if >0 is ferromagnetic (the spins tend to stand all in the same direction
-*/
+double J=1; /*interation strenght of the spins, if>0 is ferromagnetic (the spins tend to stand all in the same direction),
+otherwise half of them stand +1 and half -1 */
 
-//funcao que inicializa a rede c/ spins aleatorios
+//function that inicializes the lattice with random spins
 int init() {
 	int i;
 	for(i=0; i<N; i++) {
@@ -20,7 +20,7 @@ int init() {
 	}
 }
 
-//funcao que atualiza o valor dos spins
+//function that update the value of the spins
 int update(double beta) {
 	int j, i, r, l, d, u;
 	double E1, E2;
@@ -31,18 +31,19 @@ int update(double beta) {
 		if(i%L==0)			{ l=i-1+L; }
 		if(i>=N-L)			{ d=i-N+L; }
 		if(i<L)				{ u=i+N-L; }
-		E1=-J*lat[i]*(lat[r]+lat[l]+lat[u]+lat[d]);            //energia do spin i no estado dele
-		E2= J*lat[i]*(lat[r]+lat[l]+lat[u]+lat[d]);            //energia do spin i no outro estado
-		if(E2-E1<=0) { 				//se a energia do outro estado for menor que a dele, ele muda de estado
+		E1=-J*lat[i]*(lat[r]+lat[l]+lat[u]+lat[d]);            //energy of the spin i in your state
+		E2= J*lat[i]*(lat[r]+lat[l]+lat[u]+lat[d]);            //energy of the spin i in the other state
+		if(E2-E1<=0) { 			//if the energy of the other state is smaller than his, he changes his state
 			lat[i]=-lat[i];
 		}
-		else if((double) rand()/RAND_MAX < exp(-beta*(E2-E1))) { //se a 
+		//probability of the temperature changes the state of the spins
+		else if((double) rand()/RAND_MAX < exp(-beta*(E2-E1))) { 
 			lat[i]=-lat[i];
 		}
 	}
 }
 
-//animacao da rede
+//animation of the lattice
 int graph(double mc_max) {
 	int j,mc;
 	double beta=0.5;
@@ -57,7 +58,7 @@ int graph(double mc_max) {
 	}
 }
 
-//varias redes variando a temperatura
+//behavior of lattices with temperature variation
 int history(int mc_max) {
 	FILE*f1=fopen("N100.dat","w");
 	int j,mc,anthony,m=0;
