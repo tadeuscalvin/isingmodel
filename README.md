@@ -6,6 +6,7 @@
     
 	* Innstall glfw3:
 		- "sudo apt-get install libglfw3-dev"
+		
 To run:
 
 gcc ising.c -lm [-Ofast]
