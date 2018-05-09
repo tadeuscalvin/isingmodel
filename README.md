@@ -10,6 +10,6 @@
 To run:
 
 gcc ising.c -lm [-Ofast]
-./a.out | DynSim.sh -m 2 -l 100
+./a.out | ./DynSim.sh -m 2 -l 100
 
 #where the last number is the side of the lattice, which by default is 100
