@@ -1,3 +1,7 @@
+//Ising model with interation only between first neighbors 
+//and with "holes" (spins with value zero)
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -7,7 +11,7 @@
 
 int lat[N]; //vector that forms the lattice
 double D=0.02;
-double H=0; // Campo externo
+double H=0; // External Magnetic Field
 double J=1; /*interation strenght of the spins, if>0 is ferromagnetic (the spins tend to stand all in the same direction),
 	      otherwise half of them stand +1 and half -1 */
 
