@@ -14,6 +14,6 @@ gcc ising.c -lm
 
 chmod +x DynSim.sh
 
-./a.out | ./DynSim.sh -m 2 -l 100
+./a.out | ./DynSim.sh -l 100
 
 #where the last number is the side of the lattice, which by default is 100
