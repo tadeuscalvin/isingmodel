@@ -62,11 +62,11 @@ void graph(int mc_max) {
     init();
     for(mc=0; mc<mc_max; mc++) {
         update();
-        if(mc%10==0) {
+        //if(mc%10==0) {
             for(j=0; j<N; j++) {
                 printf("%d\n",net[j]);
             }
-        }
+        //}
     }
 }
 
